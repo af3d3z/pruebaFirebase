@@ -102,8 +102,8 @@
 <body>
   <div id="message">
     <h2>Github</h2>
-    <h1>Inicia Sesión</h1>
-    <p>Inicia sesión y mira la consola.</p>
+    <h1 id="name">Inicia Sesión</h1>
+    <p id="mail">Inicia sesión y mira la consola.</p>
     <button onclick="signInWithGitHub()">Iniciar sesión</button>
   </div>
 
@@ -152,12 +152,20 @@
         if (user) {
           // User is signed in
           console.log('User is signed in:', user);
+          console.log(JSON.stringify(user));
         } else {
           // No user is signed in
           console.log('No user is signed in');
         }
       });
     });
+
+    function showUser(user) {
+      let header = document.getElementById("#name");
+      let paragraph = document.getElementById("#mail");
+
+      header.innerHTML = user.multiFactor.user.displayName;
+    }
   </script>
 </body>
 
