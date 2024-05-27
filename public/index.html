@@ -153,6 +153,7 @@
           // User is signed in
           console.log('User is signed in:', user);
           console.log(JSON.stringify(user));
+          showUser(user);
         } else {
           // No user is signed in
           console.log('No user is signed in');
@@ -164,7 +165,8 @@
       let header = document.getElementById("#name");
       let paragraph = document.getElementById("#mail");
 
-      header.innerHTML = user.multiFactor.user.displayName;
+      header.innerHTML = user.displayName;
+      paragraph.innerHTML = user.email;
     }
   </script>
 </body>
