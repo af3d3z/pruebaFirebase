@@ -7,17 +7,17 @@
   <title>Welcome to Firebase Hosting</title>
 
   <!-- update the version number as needed -->
-  <script defer src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
   <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/10.12.2/firebase-auth.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-database-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-firestore-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-functions-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-messaging-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-storage-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-analytics-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-remote-config-compat.js"></script>
-  <script defer src="/__/firebase/10.12.2/firebase-performance-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-auth.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-database-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-functions-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-messaging-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-storage-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-analytics-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-remote-config-compat.js"></script>
+  <script src="/__/firebase/10.12.2/firebase-performance-compat.js"></script>
   <!-- 
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
@@ -107,7 +107,7 @@
     <button onclick="signInWithGitHub()">Iniciar sesión</button>
   </div>
 
-  <script>
+  <script defer>
     const firebaseConfig = {
       apiKey: "AIzaSyDmxWghcDhesRQ6fDJ9s141jKgwmF0zJI8",
       authDomain: "pruebafirebase-f5a4b.firebaseapp.com",
@@ -123,7 +123,7 @@
     const provider = new firebase.auth.GithubAuthProvider();
 
     function signInWithGitHub() {
-      firebase.auth.signInWithPopup(provider)
+      firebase.auth().signInWithPopup(provider)
         .then((result) => {
           // User signed in successfully
           const user = result.user;
