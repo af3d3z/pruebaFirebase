@@ -118,12 +118,12 @@
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+    const app = firebase.initializeApp(firebaseConfig);
 
     const provider = new firebase.auth.GithubAuthProvider();
 
     function signInWithGitHub() {
-      firebase.auth().signInWithPopup(provider)
+      firebase.auth.signInWithPopup(provider)
         .then((result) => {
           // User signed in successfully
           const user = result.user;
