@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome to Firebase Hosting</title>
+  <title>Prueba Oauth Firebase</title>
 
   <!-- update the version number as needed -->
   <script src="/__/firebase/10.12.2/firebase-app-compat.js"></script>
@@ -25,12 +25,19 @@
   <script src="/__/firebase/init.js?useEmulator=true"></script>
 
   <style media="screen">
+    img {
+      width: 100px;
+      height: 100px;
+      margin: auto auto;
+    }
+
     body {
       background: #ECEFF1;
       color: rgba(0, 0, 0, 0.87);
       font-family: Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     #message {
@@ -102,6 +109,7 @@
 <body>
   <div id="message">
     <h2>Github</h2>
+    <img style='display: none;'>
     <h1 id="name">Inicia Sesión</h1>
     <p id="mail">Inicia sesión y mira la consola.</p>
     <button onclick="signInWithGitHub()">Iniciar sesión</button>
@@ -164,9 +172,14 @@
     function showUser(user) {
       let header = document.getElementById("name");
       let paragraph = document.getElementById("mail");
-
+      let avatar = document.getElementsByTagName("img")[0];
+      
+      // removes the button
+      document.getElementsByTagName("button")[0].remove();
       header.innerHTML = user.displayName;
       paragraph.innerHTML = user.email;
+      avatar.src = user.photoURL;
+      avatar.style = 'display: block;';
     }
   </script>
 </body>
